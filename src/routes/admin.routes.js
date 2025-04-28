@@ -7,6 +7,7 @@ const adminController = new AdminController();
 router.post('/create-superadmin', adminController.createSuperadmin.bind(adminController))
     .post('/create-admin', adminController.createAdmin.bind(adminController))
     .post('/signin', adminController.signinAdmin.bind(adminController))
+    .post('/confirm-signin', adminController.confirmSigninAdmin.bind(adminController))
     .get('/', adminController.getAllAdmins.bind(adminController))
     .get('/:id', adminController.getAdminById.bind(adminController))
     .put('/:id', adminController.updateAdminById.bind(adminController))

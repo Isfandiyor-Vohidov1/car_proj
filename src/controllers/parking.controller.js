@@ -8,7 +8,9 @@ export class parkingController {
             const { error, value } = parkingValidator.validate(req.body);
             if (error) {
                 throw new Error(`Error creating: ${error.message}`);
-            }
+            } 
+
+            
 
             const newParking = await parking.create(value);
             return res.status(201).json({

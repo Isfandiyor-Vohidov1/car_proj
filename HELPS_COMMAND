@@ -10,6 +10,8 @@ POST /admin/create-admin                              |
 
 POST /admin/signin                                    |
 
+POST /admin/confirm-signin                            |
+
 GET /admin                                            |
 
 GET /admin/:id                                        |

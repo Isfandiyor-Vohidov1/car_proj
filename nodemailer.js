@@ -1,4 +1,3 @@
-// nodemailer.js
 import nodemailer from 'nodemailer';
 import dotenv from 'dotenv';
 dotenv.config();
@@ -13,21 +12,14 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-const sendMail = async () => {
+const sendMail = async (mailMessage) => {
     try {
-        const mailOptions = {
-            from: process.env.EMAIL_USER,
-            to: process.env.EMAIL_USER,
-            subject: 'nodemailer run successfully',
-            text: 'Hi!',
-        };
-
-        const info = await transporter.sendMail(mailOptions);
+        const info = await transporter.sendMail(mailMessage);
         console.log('Letter was sent: ' + info.response);
     } catch (error) {
         console.error('Error sending:', error);
+        throw error;
     }
 };
 
 export default sendMail;
-
