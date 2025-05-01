@@ -8,6 +8,8 @@ import authRoutes from './src/routes/auth.routes.js'
 import adminRoutes from './src/routes/admin.routes.js';
 import cookieParser from 'cookie-parser';
 import sendMail from "./nodemailer.js";
+import { logger } from "./logger.js";
+
 
 
 dotenv.config();
@@ -15,6 +17,7 @@ dotenv.config();
 const app = express();
 
 app.use(cookieParser())
+app.use(logger)
 app.use(express.json());
 
 app.use('/admin', adminRoutes);
